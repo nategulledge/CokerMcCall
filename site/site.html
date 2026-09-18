@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="styles.css">
+	
+</head>
+
+<body>
+	
+	<div class="program-accordion">
+		
+	<div id="header"><img src="img/coker.png" alt=""></div>
+	<div id="logo"><img src="img/logo.png" alt=""></div>
+
+  <!-- ART -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="art-panel">
+      <span>ART</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="art-panel">
+      <div class="accordion-content">
+        <p>
+          Explore drawing, painting, photography, graphic design,
+          sculpture, ceramics, and other areas of visual art.
+        </p>
+
+        <!--<a href="/programs-degrees/art/">Learn more about Art</a>-->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DANCE -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="dance-panel">
+      <span>DANCE</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="dance-panel">
+      <div class="accordion-content">
+        <p>
+          Develop technique, performance skills, choreography,
+          and an understanding of dance as an art form.
+        </p>
+
+        <!--<a href="/programs-degrees/dance/">Learn more about Dance</a>-->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MUSIC -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="music-panel">
+      <span>MUSIC</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="music-panel">
+      <div class="accordion-content">
+        <p>
+          Study performance, music theory, history, and collaborative
+          musical practice.
+        </p>
+
+        <!--<a href="/programs-degrees/music/">Learn more about Music</a>-->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MUSICAL THEATRE -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="musical-theatre-panel">
+      <span>MUSICAL THEATRE</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="musical-theatre-panel">
+      <div class="accordion-content">
+        <p>
+          Combine acting, singing, movement, and performance
+          in an interdisciplinary program.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- THEATRE -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="theatre-panel">
+      <span>THEATRE</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="theatre-panel">
+      <div class="accordion-content">
+        <p>
+          Explore acting, directing, design, production,
+          and theatre history.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<!-- AUDITION DAYS -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="audition-panel">
+      <span>AUDITION/PORTFOLIO DAYS</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="audition-panel">
+      <div class="accordion-content">
+        <p>
+          Information about audition and portfolio days.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<!-- APPLY TO COKER -->
+  <div class="accordion-item">
+    <button class="accordion-button"
+            aria-expanded="false"
+            aria-controls="apply-panel">
+      <span>APPLY TO COKER</span>
+      <span class="accordion-icon" aria-hidden="true">+</span>
+    </button>
+
+    <div class="accordion-panel" id="apply-panel">
+      <div class="accordion-content">
+        <p>
+          Apply to Coker <a href="https://www.coker.edu/apply/">Here</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+	
+<script>
+const accordionButtons = document.querySelectorAll(".accordion-button");
+
+accordionButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    const currentPanel = button.nextElementSibling;
+    const currentIcon = button.querySelector(".accordion-icon");
+
+    const isOpen =
+      button.getAttribute("aria-expanded") === "true";
+
+
+    // Close every accordion
+    accordionButtons.forEach((otherButton) => {
+
+      const otherPanel = otherButton.nextElementSibling;
+      const otherIcon =
+        otherButton.querySelector(".accordion-icon");
+
+      otherButton.setAttribute("aria-expanded", "false");
+      otherPanel.style.maxHeight = null;
+      otherIcon.textContent = "+";
+
+    });
+
+
+    // If this one wasn't already open, open it
+    if (!isOpen) {
+
+      button.setAttribute("aria-expanded", "true");
+
+      currentPanel.style.maxHeight =
+        currentPanel.scrollHeight + "px";
+
+      currentIcon.textContent = "−";
+
+    }
+
+  });
+
+});
+	
+</script>
+	
+</body>
+</html>
